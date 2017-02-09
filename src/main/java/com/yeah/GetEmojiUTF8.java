@@ -1,4 +1,4 @@
-package com.http;
+package com.yeah;
 
 import com.vdurmont.emoji.Emoji;
 import com.vdurmont.emoji.EmojiManager;
