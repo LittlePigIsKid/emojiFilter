@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://D://emojiFilter/.idea/modules/emojiFilter.iml" filepath="D://emojiFilter/.idea/modules/emojiFilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emojiFilter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/emojiFilter_main.iml" group="emojiFilter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/emojiFilter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/emojiFilter_test.iml" group="emojiFilter" />
+    </modules>
+  </component>
+</project>
