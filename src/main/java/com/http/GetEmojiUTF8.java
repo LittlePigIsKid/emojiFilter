@@ -20,11 +20,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by 1111 on 2017/2/9.
+ * Created by stove.shi on 2017/2/9.
  */
 public class GetEmojiUTF8 {
     //private static Logger LOG = LoggerFactory.getLogger(GetEmojiUTF8.class);
-    public static HashMap<String, String> map = new HashMap<String, String>();
+    public static final HashMap<String, Emoji> map = new HashMap<String, Emoji>();
     static {
         /*HttpClient httpClient = HttpClients.createDefault();
         HttpGet get = new HttpGet("http://apps.timwhitlock.info/emoji/tables/unicode");
@@ -42,15 +42,25 @@ public class GetEmojiUTF8 {
             //System.out.println(emoji);
             String unicodeStr = emoji.getUnicode();
             try {
-                System.out.println("uncideStr --"+unicodeStr);
+                //convert from unicode to utf-8
                 byte[] bytes = unicodeStr.getBytes("utf-8");
+                //convert from utf=8 to unicode
                 String utf8Str = new String(bytes, "utf-8");
-                System.out.println(utf8Str);
-                System.out.println(bytes);
+                String hex = utf8ToHex(bytes);
+                map.put(hex, emoji);
+                //System.out.println();
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
         }
     }
-
+    private static String utf8ToHex(byte[] bytes){
+        StringBuilder builder = new StringBuilder();
+        int value = 0;
+        for(int i=0; i<bytes.length; i++){
+            value = bytes[i]&0xFF;
+            builder.append(Integer.toHexString(value));
+        }
+        return builder.toString();
+    }
 }
